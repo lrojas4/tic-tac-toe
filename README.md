@@ -4,9 +4,9 @@
 ![tic-tac-toe game](tic-tac-toe.png)
 This is a two player tic-tac-toe game built using HTML, CSS, and Javascript. 
 
-## Technologies used:
-* HTML5, CSS, Javascript - To build the game
-* Chrome/ Chrome Developer Tools - Debugging
+## Technologies Used:
+* HTML5, CSS, Javascript - to build the game
+* Chrome/ Chrome Developer Tools - debugging
 * VSCode - Text editor
 
 ## Features:
