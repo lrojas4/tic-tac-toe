@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tic Tac Toe</h1>
+    </header>
+    <section>
+        <main>
+            <table id="scoreboard" class="center">
+                <tr class="scoreboard-rows">
+                    <th colspan="2">Scoreboard</th>
+                </tr>
+                <tr class="scoreboard-rows">
+                    <td>Player X</td>
+                    <td id="player1Score">0</td>
+                </tr>
+                <tr class="scoreboard-rows">
+                    <td>Player O</td>
+                    <td id="player2Score">0</td>
+                </tr> 
+            </table>
+            <div>
+                <p id="message" class="center">Hello, Player X goes first...</p>
+            </div>
+            <table id="board" class="center">
+                <tr class="board-rows">
+                    <td id="btn1"></td>
+                    <td id="btn2"></td>
+                    <td id="btn3"></td>
+                </tr>
+                <tr class="board-rows">
+                    <td id="btn4"></td>
+                    <td id="btn5"></td>
+                    <td id="btn6"></td>
+                </tr>
+                <tr class="board-rows">
+                    <td id="btn7"></td>
+                    <td id="btn8"></td>
+                    <td id="btn9"></td>
+                </tr>
+            </table>
+            <div class="center">
+                <button id="reset-board" class="center">Reset Board</button>
+                <button id="reset-scoreboard" class="center">Reset Scoreboard</button>
+            </div>
+        </main>
+    </section>
+    <section>
+        <footer>Tic Tac Toe by LR</footer>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
