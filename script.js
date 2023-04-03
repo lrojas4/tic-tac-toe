@@ -1,4 +1,4 @@
-// TIC-TAC-TOE GAME
+// TIC-TAC TOE GAME
 
 // Board buttons
 const btn1 = document.querySelector("#btn1")
@@ -31,8 +31,14 @@ let currentPlayer = player1
 // Tells us if the game is over or not
 let gameOver = false
 
+// Tells us if there is a winner
+let winner = false
+
 // Tells us if the game ends in a draw or not
 let draw = false
+
+// Tells us the number of buttons taken
+let btnsTaken = 0
 
 // Will check current players turn
 function currPlayer() {
@@ -43,7 +49,7 @@ function currPlayer() {
      }
 }
 
-// Updates scoreboard
+// Scoreboard
 function scoreboard () {
     if(gameOver === true && draw === false) {
         if (currentPlayer === player1) {
@@ -61,7 +67,7 @@ const game = () => {
     boardButtons.forEach(button => button.addEventListener('click', buttonClicked))
 }
 
-// If button is clicked it checks for current player, winner, and updates scoreboard
+// If button is clicked it checks for current player, winner, draw, and updates scoreboard
 function buttonClicked() {
     for (let i  = 0; i < boardButtons.length; i++) {
         if (this.innerText === "" && !gameOver) {
@@ -72,14 +78,17 @@ function buttonClicked() {
 
             // Checks for winner
             checkWinner()
+            
+            // Checks for a draw
+            isDraw()
 
             // Updates scoreboard 
             scoreboard()
         
-            // Checks for player's turn
+            // Checks for players turn
             currPlayer()
 
-            // Gives a draw message if all buttons have been clicked
+            // Adds event listener to each button in the board 
             if (gameOver === false){
                 const playersTurnMessage = `It's player ${currentPlayer}'s turn`
                 message.innerText = playersTurnMessage 
@@ -88,55 +97,49 @@ function buttonClicked() {
     }
 }
 
+
 game()
+
+// Winning possibilities
+const winningPos = [
+    // Horizontal win id's
+    [btn1, btn2, btn3], [btn4, btn5, btn6], [btn7, btn8,btn9],
+    // Vertical win id's
+    [btn1, btn4, btn7], [btn2, btn5, btn8], [btn3, btn6, btn9],
+    // Diagonal win id's
+    [btn1, btn5, btn9], [btn3, btn5, btn7]
+]
 
 // Checks for winner
 function checkWinner() {
-    // Winning message
     const winningMessage =  `Player ${currentPlayer} wins`
-    // Checks for horizontal Win
-    if (btn1.innerText == currentPlayer && btn2.innerText == currentPlayer && btn3.innerText == currentPlayer && !gameOver) {
-        gameOver = true
-        message.innerText = winningMessage
-        
-    } else if (btn4.innerText == currentPlayer && btn5.innerText == currentPlayer && btn6.innerText == currentPlayer && !gameOver) {
-        gameOver = true
-        message.innerText = winningMessage 
-     
-    } else if (btn7.innerText == currentPlayer && btn8.innerText == currentPlayer && btn9.innerText == currentPlayer && !gameOver) {
-        gameOver = true
-        message.innerText = winningMessage
+    for (let i = 0; i < winningPos.length; i++) {
+        // Checks for horizontal, vertical and diagonal wins
+        if(winningPos[i][0].innerText == currentPlayer && 
+            winningPos[i][1].innerText == currentPlayer && 
+            winningPos[i][2].innerText == currentPlayer && !gameOver) {
+            winningPos[i][0].classList.add("win")
+            winningPos[i][1].classList.add("win")
+            winningPos[i][2].classList.add("win") 
+            gameOver = true
+            winner = true
+            message.innerText = winningMessage    
+        }
+    }
+}
 
-    // Checks for a vertical win
-    } else if (btn1.innerText == currentPlayer && btn4.innerText == currentPlayer && btn7.innerText == currentPlayer && !gameOver) {
-        gameOver = true;
-        message.innerText = winningMessage
-
-    } else if (btn2.innerText == currentPlayer && btn5.innerText == currentPlayer && btn8.innerText == currentPlayer && !gameOver) {
-        gameOver = true;
-        message.innerText = winningMessage
-    
-    } else if (btn3.innerText == currentPlayer && btn6.innerText == currentPlayer && btn9.innerText == currentPlayer && !gameOver) {
-        gameOver = true;
-        message.innerText = winningMessage
-
-    // Checks for a diagonal win
-    } else if (btn1.innerText == currentPlayer && btn5.innerText == currentPlayer && btn9.innerText == currentPlayer && !gameOver) {
-        gameOver = true;
-        message.innerText = winningMessage
-       
-    } else if (btn3.innerText == currentPlayer && btn5.innerText == currentPlayer && btn7.innerText == currentPlayer && !gameOver) {
-        gameOver = true;
-        message.innerText = winningMessage
-    
-    // Checks if game ended in a draw
-    } else if (btn1.innerText != "" && btn2.innerText != "" && btn3.innerText != "" && btn4.innerText != "" && btn5.innerText != "" && 
-        btn6.innerText != "" && btn7.innerText != "" && btn8.innerText != "" && btn9.innerText != "" ) {
-        gameOver = true;
+// Checks for a draw in the game
+function isDraw() {
+    btnsTaken = 0
+    for (let i = 0; i < boardButtons.length; i++) {
+        if(boardButtons[i].innerText != "") {
+            btnsTaken += 1
+        } 
+    }
+    if (btnsTaken == 9 && !winner) {
+        gameOver = true
         draw = true
         message.innerText = "Game ended in a draw"
-    } else {
-        gameOver = false;
     }
 }
 
@@ -149,10 +152,15 @@ function resetBoard() {
         boardButtons[i].innerText = ""
         boardButtons[i].classList.remove("x")
         boardButtons[i].classList.remove("o")
+        boardButtons[i].classList.remove("win")
     }
     currentPlayer = player1
     message.innerText = "Hello, Player X goes first..."
     gameOver = false
+    winner = false
+    draw =false
+    btnsPushed = []
+    btnsTaken = 0
 }
 
 // Adds event listener when the Reset Board button is clicked
