@@ -1,7 +1,7 @@
 # tic-tac-toe
 
 ## Overview
-![tic-tac-toe game](tic-tac-toe.png)      
+![tic-tac-toe game](tic-tac-toe.png)       
 This is a two player tic-tac-toe game built using HTML, CSS, and Javascript. 
 
 ## Technologies Used
