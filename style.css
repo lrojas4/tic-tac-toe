@@ -1,4 +1,4 @@
-body{
+body {
     background-color: lavenderblush;
     font-family: Georgia, 'Times New Roman', Times, serif;
     min-height: 100vh;
@@ -47,11 +47,23 @@ td {
 .scoreboard-rows td{
     width: 25px;
     height: 25px;
-
 }
 
-#message {
+p {
     color: goldenrod;
+    font-size: x-large;
+    font-style: italic;
+}
+
+
+.player1 {
+    color: lightcoral;
+    font-size: x-large;
+    font-style: italic;
+}
+
+.player2 {
+    color: lightskyblue;
     font-size: x-large;
     font-style: italic;
 }
