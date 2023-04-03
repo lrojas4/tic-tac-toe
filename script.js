@@ -19,7 +19,7 @@ let player1Score = document.querySelector("#player1Score")
 let player2Score = document.querySelector("#player2Score")
 
 // Stores messages to Players
-let message = document.querySelector("#message")
+let message = document.querySelector("p")
 
 // Player 1 will start with X and player 2 will start with O
 const player1 = 'X'
@@ -88,15 +88,21 @@ function buttonClicked() {
             // Checks for players turn
             currPlayer()
 
-            // Adds event listener to each button in the board 
-            if (gameOver === false){
+            // Adds event listener to each button in the board and styles players turn messages
+            if (gameOver === false) {
                 const playersTurnMessage = `It's player ${currentPlayer}'s turn`
-                message.innerText = playersTurnMessage 
-            }         
+                message.innerText = playersTurnMessage
+                if (currentPlayer === player1) {
+                    message.classList.remove("player2")
+                    message.classList.add("player1")
+                } else if(currentPlayer === player2) {
+                    message.classList.remove("player1")
+                    message.classList.add("player2")
+                } 
+            }      
         }
     }
 }
-
 
 game()
 
@@ -123,7 +129,7 @@ function checkWinner() {
             winningPos[i][2].classList.add("win") 
             gameOver = true
             winner = true
-            message.innerText = winningMessage    
+            message.innerText = winningMessage
         }
     }
 }
@@ -139,6 +145,7 @@ function isDraw() {
     if (btnsTaken == 9 && !winner) {
         gameOver = true
         draw = true
+        message.classList.remove("player1")
         message.innerText = "Game ended in a draw"
     }
 }
@@ -156,6 +163,7 @@ function resetBoard() {
     }
     currentPlayer = player1
     message.innerText = "Hello, Player X goes first..."
+    message.classList.remove("player1")
     gameOver = false
     winner = false
     draw =false
