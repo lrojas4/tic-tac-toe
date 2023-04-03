@@ -1,13 +1,11 @@
-@media screen and (max-width: 400px) {
-    body{
-        background-color: lavenderblush;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        min-height: 100vh;
-        min-width: 100vw;
-        display: grid;
-        grid-template-rows: 100px auto 100px;
-        grid-template-columns: 1fr;
-    }
+body{
+    background-color: lavenderblush;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 1fr;
 }
 
 header {
