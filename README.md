@@ -12,7 +12,7 @@ This is a two player tic-tac-toe game built using HTML, CSS, and Javascript.
 ## Features
 * Players are able to start a new game by refreshing the page or resetting the board button
 * Player 1 starts with X and Player 2 starts with O
-* A message displays after each player's turn
+* A message in the next players color displays after each turn
 * Players are not able to click on the same button twice
 * Players are not able to continue playing once a player wins, loses, or if there's a draw
 * A message displays stating which player won or if the game ended in a draw
