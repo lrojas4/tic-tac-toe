@@ -99,12 +99,16 @@ button {
 }
 
 #reset-board {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     background-color: lightseagreen;
     color: black;
     border-radius: 7px;
 }
 
 #reset-scoreboard {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     background-color: lightblue;
     color: black;
     border-radius: 7px;
