@@ -101,11 +101,13 @@ button {
 #reset-board {
     background-color: lightseagreen;
     color: black;
+    border-radius: 7px;
 }
 
 #reset-scoreboard {
     background-color: lightblue;
     color: black;
+    border-radius: 7px;
 }
 
 .center {
