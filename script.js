@@ -162,7 +162,6 @@ function resetBoard() {
         boardButtons[i].classList.remove("win")
     }
     currentPlayer = player1
-    // message.innerText = "Hello, Player X goes first..."
     message.classList.remove("player1")
     message.classList.remove("player2")
     message.innerText = "Hello, Player X goes first..."
