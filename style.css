@@ -127,3 +127,11 @@ footer {
     color: goldenrod;
 }
 
+footer a {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+footer a:hover {
+    color: lightcoral;
+}
