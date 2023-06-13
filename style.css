@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-
 header {
     grid-row: 1;
     grid-column: 1;
@@ -56,7 +55,6 @@ p {
     font-size: x-large;
     font-style: italic;
 }
-
 
 .player1 {
     color: lightcoral;
