@@ -18,12 +18,12 @@ This is a two player tic-tac-toe game built using HTML, CSS, and Javascript.
 * A message displays stating which player won or if the game ended in a draw
 * Scoreboard updates after each win
 * Players are able to reset the board and scoreboard separately 
+* Responsive web design
 
 ## Getting Started
 Click [here](https://lrojas4.github.io/tic-tac-toe/) to play! 
 
 ## Future Features
-* Responsive Web Design
 * Players are able to input their name
 * Each player is able to choose between an X or an O
 * When a game is restarted the winner of the previous game goes first
