@@ -4,7 +4,7 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid-template-rows: 100px auto 100px;
+    grid-template-rows: 100px 1fr 100px;
     grid-template-columns: 1fr;
     margin: 0;
 }
@@ -77,8 +77,8 @@ p {
 
 #board {
     background-color: lightslategray;
-    width: 400px;
-    height: 350px;
+    width: 375px;
+    height: 315px;
 }
 
 button {
@@ -134,7 +134,7 @@ footer {
 footer a {
     text-decoration: none;
     color: goldenrod;
-}
+} 
 
 footer a:hover {
     color: lightcoral;
