@@ -139,3 +139,11 @@ footer a {
 footer a:hover {
     color: lightcoral;
 }
+
+
+@media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 1fr 100px;    
+    }
+}
