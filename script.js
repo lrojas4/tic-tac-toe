@@ -146,7 +146,7 @@ function isDraw() {
         gameOver = true
         draw = true
         message.classList.remove("player1")
-        message.innerText = "Game ended in a draw"
+        message.innerText = "It's a tie!"
     }
 }
 
